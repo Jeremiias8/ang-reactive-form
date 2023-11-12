@@ -25,6 +25,10 @@
 .container {
 
   .register-form {
+    img {
+      max-width: 15% !important;
+    }
+
     h1 {
       font-size: 16px;
       font-style: italic;
@@ -43,13 +47,13 @@
       background-color: transparent;
       color: lightgray;
       outline: none;
+      border: none;
       border-bottom: 2px solid gray;
-      border-radius: 5px;
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      -ms-border-radius: 5px;
-      -o-border-radius: 5px;
       cursor: pointer;
+    }
+
+    label {
+      margin-top: 5px;
     }
 
     input[type="submit"] {

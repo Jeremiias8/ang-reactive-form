@@ -2,12 +2,16 @@
 <div class="container">
 
   <div class="register-form">
+    <img src="../../../assets/img/user.svg" alt="User">
     <h1>{{ title }}</h1>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
+      <label for="name">Nombre</label>
       <input type="text" name="name" placeholder="Name:">
+      <label for="email">Email</label>
       <input type="email" name="email" placeholder="...@.com">
+      <label for="password">Contraseña</label>
       <input type="password" name="pwd" placeholder="*********">
 
       <input type="submit" name="submit" value="Send">
