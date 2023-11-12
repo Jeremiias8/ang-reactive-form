@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Validation } from '../../utils/Validation';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import Validation from '../../utils/Validation';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +22,7 @@ export class HomeComponent implements OnInit {
       acceptTerms: new FormControl(false),
   });
 
-  submitted: false | undefined;
+  submitted = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
