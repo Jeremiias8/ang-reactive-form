@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 * {
   box-sizing: border-box;
-  margin: 30px auto;
-  padding: 20px;
+  margin: 25px auto;
+  padding: 15px;
 }
 
 .app-container {
@@ -15,7 +15,7 @@
 
   #content {
     width: 85%;
-    height: 400px;
+    height: 320px;
     border: 1px solid #ddd;
     box-shadow: 0px 0px 35px #fff;
   }
@@ -25,9 +25,13 @@
 .container {
 
   .register-form {
-    img {
-      max-width: 15% !important;
-    }
+    width: 90%;
+    max-height: 320px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 
     h1 {
       font-size: 16px;
@@ -39,13 +43,17 @@
       display: flex;
       flex-direction: column;
       box-shadow: 0px 0px 25px gray inset;
+
+      img {
+        max-width: 140px !important;
+      }
     }
 
     input[type="text"],
     input[type="email"],
     input[type="password"] {
       background-color: transparent;
-      color: lightgray;
+      color: rgb(43, 43, 43);
       outline: none;
       border: none;
       border-bottom: 2px solid gray;
@@ -56,7 +64,8 @@
       margin-top: 5px;
     }
 
-    input[type="submit"] {
+    input[type="submit"],
+    input[type="reset"] {
       border: none;
       border-bottom: 2px solid black;
       background: linear-gradient(
@@ -66,5 +75,11 @@
       );
       cursor: pointer;
     }
+  }
+
+  .values {
+    width: 80%;
+    height: auto;
+    padding: 10px;
   }
 }

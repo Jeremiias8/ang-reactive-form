@@ -2,20 +2,34 @@
 <div class="container">
 
   <div class="register-form">
-    <img src="../../../assets/img/user.svg" alt="User">
-    <h1>{{ title }}</h1>
 
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <img src="../../../assets/img/user.svg" alt="User">
 
       <label for="name">Nombre</label>
-      <input type="text" name="name" placeholder="Name:">
-      <label for="email">Email</label>
-      <input type="email" name="email" placeholder="...@.com">
-      <label for="password">Contraseña</label>
-      <input type="password" name="pwd" placeholder="*********">
+      <input type="text" id="name" name="name" formControlName="name"
+      [ngClass]="{ 'is-invalid': submitted && f['name'].errors }"  placeholder="Name:">
+      <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
+        <div *ngIf="f['name'].errors['required']">Name is required</div>
+      </div>
 
-      <input type="submit" name="submit" value="Send">
+      <label for="email">Email</label>
+      <input type="email" name="email" formControlName="email" placeholder="...@.com">
+
+      <label for="password">Contraseña</label>
+      <input type="password" name="pwd" formControlName="password"
+      [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" placeholder="*********">
+
+      <label for="terms">Aceptar Términos de Privacidad</label>
+      <input type="checkbox" name="terms">
+
+      <input type="submit" name="submit" value="Register">
+      <input type="reset" onclick="onReset()" name="reset" value="Reset">
     </form>
   </div>
+
+  <span class="values">
+    <h3>Name value: </h3>
+  </span>
 
 </div>
