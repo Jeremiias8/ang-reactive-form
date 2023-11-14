@@ -14,14 +14,54 @@
       </div>
 
       <label for="email">Email</label>
-      <input type="email" name="email" formControlName="email" placeholder="...@.com">
+      <input type="email" name="email" formControlName="email"
+      [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+      placeholder="...@.com">
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+
+        <div *ngIf="f['email'].errors['required']">Email is required</div>
+        <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+
+      </div>
 
       <label for="password">Contraseña</label>
       <input type="password" name="pwd" formControlName="password"
       [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" placeholder="*********">
+      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
 
-      <label for="terms">Aceptar Términos de Privacidad</label>
-      <input type="checkbox" name="terms">
+        <div *ngIf="f['password'].errors['required']">
+          Password is required
+        </div>
+        <div *ngIf="f['password'].errors['minlength']">
+          Password must be at least 6 characters
+        </div>
+        <div *ngIf="f['password'].errors['maxlength']">
+          Username must not exceed 40 characters
+        </div>
+
+      </div>
+
+      <label for="password">Confirmar Contraseña</label>
+      <input type="password" name="pwd" formControlName="confirmPassword"
+      [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }" placeholder="*********">
+      <div
+        *ngIf="submitted && f['confirmPassword'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f['confirmPassword'].errors['required']">
+          Confirm Password is required
+        </div>
+        <div *ngIf="f['confirmPassword'].errors['matching']">
+          Confirm Password does not match
+        </div>
+      </div>
+
+      <input type="checkbox" name="terms" formControlName="acceptTerms"
+      [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors}">
+      <label for="terms">He leído y Acepto los Términos de Privacidad</label>
+      <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
+        Accept Terms is required
+      </div>
 
       <input type="submit" name="submit" value="Register">
       <input type="reset" onclick="onReset()" name="reset" value="Reset">
