@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  title = 'Angular Reactive Form';
+  title = 'Formulario Reactivo con Angular';
 
   constructor() {
 
